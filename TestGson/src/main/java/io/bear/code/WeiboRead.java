@@ -31,7 +31,7 @@ public class WeiboRead {
 		String url = "https://api.weibo.com/2/comments/create.json";
 		HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
 
-		byte[] postData = ("access_token="+"access_token"+"&id=4164944369081141&comment=AreUOK").getBytes(StandardCharsets.UTF_8);
+		byte[] postData = ("access_token="+access_token+"&id=4164944369081141&comment=AreUOK").getBytes(StandardCharsets.UTF_8);
 
 		connection.setDoOutput(true);
 		connection.setRequestProperty("Accept-Charset", "UTF_8");
@@ -130,7 +130,7 @@ public class WeiboRead {
 		else {
 			@SuppressWarnings("unchecked")
 			Map<String, Object> retweeted_status = (Map<String, Object>) jsonObject.get("retweeted_status");
-			return text + " ¡¾RETWEET¡¿ " + (new String(retweeted_status.get("text").toString().getBytes(), "UTF-8"));
+			return text + " Â¡Â¾RETWEETÂ¡Â¿ " + (new String(retweeted_status.get("text").toString().getBytes(), "UTF-8"));
 		}
 	}
 
