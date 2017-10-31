@@ -1,0 +1,21 @@
+ <html>
+        <body>
+             <form action="#" th:action="@{/loginProcess}" th:object="${person}" method="post">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" th:field="*{name}" /></td>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+                </tr>
+                <tr>
+                    <td>Passwrd:</td>
+                    <td><input type="password" th:field="*{password}" /></td>
+                    <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Log in</button></td>
+                </tr>
+            </table>
+        </form>
+        </body>
+        </html>
